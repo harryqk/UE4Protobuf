@@ -15,14 +15,27 @@ public class Protobuf : ModuleRules
 		//PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
 		PublicIncludePaths.AddRange(
 			new string[] {
-				Path.Combine(ModuleDirectory, "include"),
 				Path.Combine(ModuleDirectory, "public")
 				// ... add public include paths required here ...
 			}
 			);
+		if (Target.Platform == UnrealTargetPlatform.Win64)
+        {
 
-		//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobufd.lib"));
-		PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobuf.lib"));
+			PublicIncludePaths.AddRange(
+				new string[] {
+							Path.Combine(ModuleDirectory, "Win64", "include")
+					// ... add public include paths required here ...
+				}
+			);
+			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Win64", "lib", "libprotobuf.lib"));
+		}
+        else if(Target.Platform == UnrealTargetPlatform.Mac)
+        {
+
+        }
+			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobufd.lib"));
+			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobuf.lib"));
 		//PublicAdditionalLibraries.Add(Path.Combine(DllPath, "lib", "libprotobuf-lite.lib"));
 		//PublicAdditionalLibraries.Add(Path.Combine(DllPath, "lib", "libprotoc.lib"));
 
