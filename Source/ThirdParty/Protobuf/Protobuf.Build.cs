@@ -32,7 +32,13 @@ public class Protobuf : ModuleRules
 		}
         else if(Target.Platform == UnrealTargetPlatform.Mac)
         {
-
+	        PublicIncludePaths.AddRange(
+		        new string[] {
+			        Path.Combine(ModuleDirectory, "Mac", "include")
+			        // ... add public include paths required here ...
+		        }
+	        );
+	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "libprotobuf.a"));
         }
 			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobufd.lib"));
 			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobuf.lib"));
