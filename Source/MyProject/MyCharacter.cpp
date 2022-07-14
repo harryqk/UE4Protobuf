@@ -3,6 +3,7 @@
 
 #include "MyCharacter.h"
 #include "Harry1.pb.h"
+#include "library.h"
 using namespace std;
 using namespace tutorial;
 
@@ -17,7 +18,7 @@ AMyCharacter::AMyCharacter()
 // Called when the game starts or when spawned
 void AMyCharacter::BeginPlay()
 {
-
+	UE_LOG(LogTemp, Warning, TEXT("Accept:%d"), Accept());
     UE_LOG(LogTemp, Warning, TEXT("Hello World"));
     Harry1 example1;
     example1.set_stringval("hello,world");
@@ -58,6 +59,11 @@ void AMyCharacter::BeginPlay()
         //printf("6:%s\n", example2.repeatedstringval(i));
         UE_LOG(LogTemp, Warning, TEXT("6:%s"), *FString(example2.repeatedstringval(i).c_str()));
     }
+
+	//GoString strx;
+	//strx = Hello();   
+	//Print_a();
+	//UE_LOG(LogTemp, Warning, TEXT("7:%s"), *FString(strx.p));
 	Super::BeginPlay();
 	
 }

@@ -15,7 +15,8 @@ public class Protobuf : ModuleRules
 		//PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
 		PublicIncludePaths.AddRange(
 			new string[] {
-				Path.Combine(ModuleDirectory, "public")
+				Path.Combine(ModuleDirectory, "public"),
+				Path.Combine(ModuleDirectory, "Test")
 				// ... add public include paths required here ...
 			}
 			);
@@ -29,6 +30,7 @@ public class Protobuf : ModuleRules
 				}
 			);
 			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Win64", "lib", "libprotobuf.lib"));
+			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "libSCPPSocketWin.a"));
 		}
         else if(Target.Platform == UnrealTargetPlatform.Mac)
         {
@@ -39,6 +41,8 @@ public class Protobuf : ModuleRules
 		        }
 	        );
 	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "libprotobuf.a"));
+	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "libSCPPSocketMac.a"));
+	        //PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "GoLibTest.a"));
         }
 			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobufd.lib"));
 			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobuf.lib"));
