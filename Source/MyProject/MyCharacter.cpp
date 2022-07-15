@@ -18,7 +18,10 @@ AMyCharacter::AMyCharacter()
 // Called when the game starts or when spawned
 void AMyCharacter::BeginPlay()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Accept:%d"), Accept());
+
+    //hello();
+    int a = Accept();
+	UE_LOG(LogTemp, Warning, TEXT("Accept:%d"), a);
     UE_LOG(LogTemp, Warning, TEXT("Hello World"));
     Harry1 example1;
     example1.set_stringval("hello,world");

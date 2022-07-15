@@ -30,7 +30,8 @@ public class Protobuf : ModuleRules
 				}
 			);
 			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Win64", "lib", "libprotobuf.lib"));
-			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "libSCPPSocketWin.a"));
+			PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "SCPPSocketWin.lib"));
+			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Win64", "lib","libSCPPSocketWin.a"));
 		}
         else if(Target.Platform == UnrealTargetPlatform.Mac)
         {
