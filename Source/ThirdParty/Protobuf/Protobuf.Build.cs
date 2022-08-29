@@ -38,11 +38,13 @@ public class Protobuf : ModuleRules
 	        PublicIncludePaths.AddRange(
 		        new string[] {
 			        Path.Combine(ModuleDirectory, "Mac", "include")
+			        //Path.Combine(ModuleDirectory, "Mac", "include", "SCPPSocket")
 			        // ... add public include paths required here ...
 		        }
 	        );
 	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "libprotobuf.a"));
-	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "libSCPPSocketMac.a"));
+	        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "libSCPPSocketMac.a"));
+	        //PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Test", "libSCPPSocketMac.a"));
 	        //PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Mac", "lib", "GoLibTest.a"));
         }
 			//PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "lib", "libprotobufd.lib"));

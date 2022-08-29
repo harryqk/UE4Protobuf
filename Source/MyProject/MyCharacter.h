@@ -7,7 +7,7 @@
 #include "MyCharacter.generated.h"
 
 UCLASS()
-class MYPROJECT_API AMyCharacter : public ACharacter
+class MYPROJECT_API AMyCharacter : public APawn
 {
 	GENERATED_BODY()
 
@@ -26,4 +26,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category= NetMgr)
+	void StartServer();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category= NetMgr)
+	void StopServer();
+	
 };
